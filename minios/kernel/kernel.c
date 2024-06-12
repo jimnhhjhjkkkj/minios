@@ -7,6 +7,12 @@
 #include "system.h"
 void print_minios(char* str);
 
+// 각 테스트 파일의 main 함수를 선언
+//void test_main();
+void test1_main();
+void test2_main();
+void test3_main();
+
 int main() {
     print_minios("[MiniOS SSU] Hello, World!");
 
@@ -16,38 +22,34 @@ int main() {
         // readline을 사용하여 입력 받기
         input = readline("커맨드를 입력하세요(종료:exit) : ");
 
-        if (strcmp(input,"exit") == 0) {
+        if (strcmp(input, "exit") == 0) {
             break;
         }
 
-        if (strcmp(input,"minisystem") == 0){
+        if (strcmp(input, "minisystem") == 0) {
             minisystem();
         }
-        else if (strcmp(input,"myfunc") == 0){
-            myfunc();
+        else if (strcmp(input, "test1") == 0) {
+            test1_main();
         }
-        else if (strcmp(input,"ipc") == 0){
-            ipc();
+        else if (strcmp(input, "test2") == 0) {
+            test2_main();
         }
-        else if (strcmp(input,"pi") == 0){
-            pi();
+        else if (strcmp(input, "test3") == 0) {
+            test3_main();
         }
-        else if (strcmp(input,"rr") == 0){
-            rrobin();
+        else if (strcmp(input, "test11") == 0) {
+            test11_main();
         }
-        else if (strcmp(input,"sema") == 0){
-            fork_f();
+        else if (strcmp(input, "app") == 0) {
+            app_main();
         }
-        else if (strcmp(input,"counter1") == 0){
-            main3();
+        else if (strcmp(input, "one") == 0) {
+            one_main();
         }
-        else if (strcmp(input,"counter2") == 0){
-            main4();
+        else {
+            system(input);
         }
-        else if (strcmp(input,"asdf") == 0){
-            main5();
-        }
-        else system(input);
     }
 
     // 메모리 해제
@@ -58,5 +60,6 @@ int main() {
 }
 
 void print_minios(char* str) {
-        printf("%s\n",str);
+    printf("%s\n", str);
 }
+
